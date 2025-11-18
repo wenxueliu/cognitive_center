@@ -224,3 +224,20 @@ status: approved
 - [x] 已完成项目
 - [ ] 待完成项目
 ```
+
+## 🎨 智能转换功能 (v2.0升级)
+## 🎨 智能转换功能
+
+### 1. 自动类型检测
+```
+输入类型 → 自动 type 分类
+
+技术介绍内容 → type: entity
+决策讨论内容 → type: decision  
+流程步骤内容 → type: process
+一般记录内容 → type: note
+
+复杂技术概念 → type: entity + Relations 网络
+多方案对比 → type: decision + Observations 分类
+操作指南 → type: process + method 观察
+```
