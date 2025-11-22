@@ -17,10 +17,9 @@ This is an **Obsidian knowledge management vault** integrated with **Basic Memor
 ### Directory Structure and Purpose
 ```
 /output/
-├── zettelkasten/    # Atomic knowledge notes (tech entities, core concepts)
+├── zettelkasten/    # Atomic knowledge notes (tech entities, core concepts and so on)
 ├── create/         # Generated content, decisions, and knowledge workflows
 ├── template/       # Standardized note templates
-└── BASE/          # Database views and systematic knowledge management
 
 /.claude/           # Claude Code environment configuration
 /.obsidian/         # Obsidian vault configuration and plugins
@@ -29,12 +28,12 @@ This is an **Obsidian knowledge management vault** integrated with **Basic Memor
 ## Key Systems Integration
 
 ### Basic Memory Knowledge Graph
-- **Project**: "认知中心" (Cognitive Center)
+- **Project**: "第二大脑" (Seconde Brain)
 - **Standards**: Full Basic Memory 2.0 spec compliance
 - **Memory URLs**: Support for memory:// scheme and pattern matching
-- **Knowledge Types**: entity, decision, process, note with standardized frontmatter
-- **Relations**: implements, depends_on, requires, relates_to, extends, pairs_with
-- **Observations**: [tech], [design], [decision], [issue], [method], [principle]
+- **Knowledge Types**: note, entity, decision, process, spec, meeting, person, project and so on
+- **Relations**: implements, depends_on, requires, relates_to, extends, pairs_with, part_of, contains, inspired_by, contrasts_with, leads_to, caused_by and so on
+- **Observations**: [tech], [design], [decision], [issue], [method], [principle], [fact], [idea], [technique], [requirement], [problem], [solution], [insight], [feature], [preference] and so on
 
 ### Automation Capabilities
 ```bash
@@ -53,38 +52,60 @@ rg -i "keyword" --type md   # Case-insensitive search
 ## Development Standards
 
 ### Note Creation Process
-1. **Select appropriate template** from `/output/template/`
-2. **Follow Basic Memory frontmatter standards**:
+1. **Search before creating** to avoid duplicates
+2. **Select appropriate template** from `/output/template/`
+3. **Follow Basic Memory frontmatter standards**:
    ```yaml
    ---
-   title: "文档标题"
-   type: entity | decision | process | note
-   tags: [分类, 技术, 状态]
-   permalink: unique-identifier
+   title: "Clear Descriptive Title"
+   type: note | entity | decision | process | spec | meeting | person | project
+   tags: [分类, 技术, 状态, 中文标签]
+   permalink: unique-identifier    # Optional: auto-generated from title if not specified
    status: active | draft | deprecated
-   aliases: ["别名1", "别名2"]
+   aliases: ["别名1", "别名2"]         # Optional
    ---
    ```
-3. **Structure content with standard sections**:
+4. **Structure content with standard sections**:
    - Main content using markdown
-   - `## Relations` for knowledge graph connections
-   - `## Observations` for categorized insights
-4. **Ensure valid memory:// URLs** before creating cross-references
+   - `## Context` for background information (optional)
+   - `## Observations` for 3-5 categorized insights minimum
+   - `## Relations` for 2-3 knowledge graph connections minimum
+5. **Ensure valid memory:// URLs** before creating cross-references
 
 ### Knowledge Graph Standards
 ```markdown
-## Relations (standard format)
-- implements [[技术概念]]
-- depends_on [[系统依赖]]
-- relates_to [[相关概念]]
-- extends [[扩展知识]]
-- pairs_with [[配套技术]]
+## Relations (rich semantic connections)
+- implements [[技术概念]]           # Implementation relationship
+- depends_on [[系统依赖]]           # Required dependency
+- requires [[需求规范]]             # Explicit requirements
+- relates_to [[相关概念]]           # General connection
+- extends [[扩展知识]]              # Enhancement relationship
+- pairs_with [[配套技术]]           # Complementary relationship
+- part_of [[更大系统]]              # Hierarchical membership
+- contains [[子组件]]               # Component containment
+- inspired_by [[灵感来源]]          # Source of ideas
+- contrasts_with [[替代方案]]       # Alternative approach
+- leads_to [[后续步骤]]             # Sequential relationship
+- caused_by [[根本原因]]            # Causal relationship
+- ...
 
-## Observations (categorized)
-- [tech] 技术实现细节 #tag (上下文说明)
-- [design] 架构设计决策 #tag (选择依据)
-- [decision] 关键决策点 #tag (理由分析)
-- [issue] 问题和限制 #tag (影响评估)
+## Observations (comprehensive categorization)
+- [tech] 技术实现细节 #tag (上下文说明)     # Technical details
+- [design] 架构设计决策 #tag (选择依据)      # Architecture decisions
+- [decision] 关键决策点 #tag (理由分析)      # Choices made
+- [issue] 问题和限制 #tag (影响评估)        # Problems identified
+- [method] 方法和技巧 #tag (实现细节)        # Approaches and techniques
+- [principle] 基础原理 #tag (理论依据)       # Fundamental concepts
+- [fact] 客观事实 #tag (数据来源)            # Objective information
+- [idea] 概念和想法 #tag (创新点)            # Thoughts and concepts
+- [technique] 实现方法 #tag (最佳实践)        # Implementation methods
+- [requirement] 需求和约束 #tag (必要条件)   # Needs and constraints
+- [problem] 识别的风险 #tag (影响范围)       # Issues identified
+- [solution] 解决方案 #tag (效果评估)        # Resolutions
+- [insight] 关键洞察 #tag (价值体现)         # Key realizations
+- [feature] 功能特性 #tag (用户价值)         # User capabilities
+- [preference] 个人偏好 #tag (选择理由)       # Personal opinions
+- ...
 ```
 
 ## Common Development Tasks
@@ -113,6 +134,18 @@ rg "搜索关键词"       # Check content relevance
 # Validate knowledge graph consistency
 grep -r "memory://" --include="*.md" .  # Check URL references
 grep -r "\[\[" --include="*.md" .       # Verify wiki-links
+
+### memory:// URL Reference Patterns
+```bash
+# Direct access by permalink or title
+memory://unique-permalink
+memory://Document Title
+
+# Pattern matching for powerful queries
+memory://auth*                       # All documents starting with "auth"
+memory://*/approaches                # All documents ending with "approaches"
+memory://project/*/requirements      # All requirements in project folder
+memory://docs/search/implements/*    # Follow all implements relations from search docs
 ```
 
 ## Testing and Validation
@@ -166,6 +199,56 @@ grep -r "\[\[" --include="*.md" .       # Verify wiki-links
 - Test BASE databases with sample data first
 - Validate knowledge graph connectivity after major changes
 - Maintain consistent terminology across related documents
+
+## Best Practices
+
+### Knowledge Creation Workflow
+1. **Discovery**: Always start with `list_memory_projects()` to identify working project
+2. **Search**: Use `search_notes()` to avoid duplicates before creating new content
+3. **Rich Structure**: Every note should include:
+   - Clear, descriptive title
+   - 3-5 observations minimum with specific categories
+   - 2-3 relations minimum with semantic meaning
+   - Appropriate tags and metadata
+4. **Progressive Elaboration**: Build knowledge incrementally:
+   ```
+   write_note → edit_note (append/prepend) → move_note → view_note
+   ```
+5. **Context Building**: Use `build_context()` with memory:// URLs to gather related insights
+
+### Key Workflows
+
+**Knowledge Processing Flow:**
+```
+Search → Analyze Context → Create/Update → Establish Relations → Validate
+```
+
+**Research and Discovery Flow:**
+```
+search_notes → read_note → build_context → write_note
+```
+
+**Organization Flow:**
+```
+list_directory → search_notes → move_note → validate_structure
+```
+
+### Common Commands
+```bash
+# Project discovery
+list_memory_projects                    # View available projects
+
+# Knowledge operations
+write_note project="认知中心"           # Create new knowledge
+edit_note identifier="title"            # Update existing content
+view_note identifier="title"            # Retrieve with relations
+search_notes query="关键词" project="认知中心"  # Find knowledge
+build_context url="memory://pattern"    # Load related content
+
+# Content organization
+list_directory project="认知中心"         # Explore structure
+move_note identifier="title"           # Reorganize content
+```
 
 ## Usage Context
 This knowledge base primarily serves as a **technical knowledge management system** with focus on:
