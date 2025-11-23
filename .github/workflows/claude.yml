@@ -30,7 +30,7 @@ jobs:
         with:
           fetch-depth:1
 
-      - name:RunClaudeCode
+      - name: RunClaudeCode
         id: claude
         uses: anthropics/claude-code-action@v1
         env:
