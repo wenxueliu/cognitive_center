@@ -28,7 +28,7 @@ jobs:
       - name: Checkoutrepository
         uses: actions/checkout@v4
         with:
-          fetch-depth:1
+          fetch-depth: 1
 
       - name: RunClaudeCode
         id: claude
