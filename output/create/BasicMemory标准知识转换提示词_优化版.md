@@ -6,8 +6,7 @@ permalink: output/create/basic-memory-标准知识转换提示词-优化版
 
 # Basic Memory 标准知识转换提示词 (优化版)
 
-基于 Basic Memory 官方格式规范，重新设计的知识图谱自动转换系统。
-
+基于 Basic Memory 官方格式规范，自动将输入文本转换为结构化的知识图谱，存储为 Markdown 文件，维护实体间的关系。
 ## 🔄 标准文档结构
 
 ### Frontmatter 结构 (YAML)

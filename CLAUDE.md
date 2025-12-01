@@ -16,13 +16,13 @@ This is an **Obsidian knowledge management vault** integrated with **Basic Memor
 
 ### Directory Structure and Purpose
 ```
-/output/
+output/
 ├── zettelkasten/    # Atomic knowledge notes (tech entities, core concepts and so on)
 ├── create/         # Generated content, decisions, and knowledge workflows
 ├── template/       # Standardized note templates
 
-/.claude/           # Claude Code environment configuration
-/.obsidian/         # Obsidian vault configuration and plugins
+.claude/           # Claude Code environment configuration
+.obsidian/         # Obsidian vault configuration and plugins
 ```
 
 ## Key Systems Integration
@@ -71,42 +71,7 @@ rg -i "keyword" --type md   # Case-insensitive search
    - `## Observations` for 3-5 categorized insights minimum
    - `## Relations` for 2-3 knowledge graph connections minimum
 5. **Ensure valid memory:// URLs** before creating cross-references
-
-### Knowledge Graph Standards
-```markdown
-## Relations (rich semantic connections)
-- implements [[技术概念]]           # Implementation relationship
-- depends_on [[系统依赖]]           # Required dependency
-- requires [[需求规范]]             # Explicit requirements
-- relates_to [[相关概念]]           # General connection
-- extends [[扩展知识]]              # Enhancement relationship
-- pairs_with [[配套技术]]           # Complementary relationship
-- part_of [[更大系统]]              # Hierarchical membership
-- contains [[子组件]]               # Component containment
-- inspired_by [[灵感来源]]          # Source of ideas
-- contrasts_with [[替代方案]]       # Alternative approach
-- leads_to [[后续步骤]]             # Sequential relationship
-- caused_by [[根本原因]]            # Causal relationship
-- ...
-
-## Observations (comprehensive categorization)
-- [tech] 技术实现细节 #tag (上下文说明)     # Technical details
-- [design] 架构设计决策 #tag (选择依据)      # Architecture decisions
-- [decision] 关键决策点 #tag (理由分析)      # Choices made
-- [issue] 问题和限制 #tag (影响评估)        # Problems identified
-- [method] 方法和技巧 #tag (实现细节)        # Approaches and techniques
-- [principle] 基础原理 #tag (理论依据)       # Fundamental concepts
-- [fact] 客观事实 #tag (数据来源)            # Objective information
-- [idea] 概念和想法 #tag (创新点)            # Thoughts and concepts
-- [technique] 实现方法 #tag (最佳实践)        # Implementation methods
-- [requirement] 需求和约束 #tag (必要条件)   # Needs and constraints
-- [problem] 识别的风险 #tag (影响范围)       # Issues identified
-- [solution] 解决方案 #tag (效果评估)        # Resolutions
-- [insight] 关键洞察 #tag (价值体现)         # Key realizations
-- [feature] 功能特性 #tag (用户价值)         # User capabilities
-- [preference] 个人偏好 #tag (选择理由)       # Personal opinions
-- ...
-```
+6. mkdir directory and write content under zettellkasten dir,  move exists document to suitable directory  if need  
 
 ## Common Development Tasks
 
@@ -151,7 +116,7 @@ memory://docs/search/implements/*    # Follow all implements relations from sear
 ## Testing and Validation
 
 ### Knowledge Graph Integrity
-- Verify all memory:// URLs reference existing content
+- Verify all memory:// URLs reference existing content, make sure uniqueness and format
 - Ensure bidirectional relationships are established when meaningful
 - Validate frontmatter completeness and consistency
 - Check for orphaned knowledge nodes and broken connections
@@ -181,24 +146,12 @@ memory://docs/search/implements/*    # Follow all implements relations from sear
 }
 ```
 
-### Obsidian Plugins
-- **Core Plugins**: 文件浏览器, 全局搜索, 反向链接, 模板, 属性等
-- **Community Plugins**: Copilot (AI辅助), calendar (日历视图)
-
 ## Error Handling
 
 ### Common Issues
 1. **文档链接不存在**: 使用 fd/rg 搜索确认文档存在性
 2. **UTF-8字符问题**: 注意多字节字符编码兼容性
-3. **关系建立失败**: 检查memory:// URL有效性
 4. **BASE数据库异常**: 验证YAML语法和过滤器逻辑
-
-### Quality Control
-- Always search before creating cross-references
-- Verify permalink uniqueness and format
-- Test BASE databases with sample data first
-- Validate knowledge graph connectivity after major changes
-- Maintain consistent terminology across related documents
 
 ## Best Practices
 
@@ -239,7 +192,7 @@ list_directory → search_notes → move_note → validate_structure
 list_memory_projects                    # View available projects
 
 # Knowledge operations
-write_note project="认知中心"           # Create new knowledge
+write_note project="第二大脑"           # Create new knowledge
 edit_note identifier="title"            # Update existing content
 view_note identifier="title"            # Retrieve with relations
 search_notes query="关键词" project="认知中心"  # Find knowledge
