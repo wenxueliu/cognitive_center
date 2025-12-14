@@ -17,7 +17,7 @@ This is an **Obsidian knowledge management vault** integrated with **Basic Memor
 ### Directory Structure and Purpose
 ```
 output/
-├── zettelkasten/    # Atomic knowledge notes (tech entities, core concepts and so on)
+├── zettelkasten/    # Hierarchy directory, Atomic knowledge notes (tech entities, core concepts and so on)
 ├── create/         # Generated content, decisions, and knowledge workflows
 ├── template/       # Standardized note templates
 
@@ -28,7 +28,7 @@ output/
 ## Key Systems Integration
 
 ### Basic Memory Knowledge Graph
-- **Project**: "第二大脑" (Seconde Brain)
+- **Project**: "认知中心" (Cognitive Center)
 - **Standards**: Full Basic Memory 2.0 spec compliance
 - **Memory URLs**: Support for memory:// scheme and pattern matching
 - **Knowledge Types**: note, entity, decision, process, spec, meeting, person, project and so on
@@ -37,12 +37,6 @@ output/
 
 ### Automation Capabilities
 ```bash
-# Knowledge graph operations
-list_memory_projects        # View BASIC Memory projects
-create_memory_project       # Initialize new knowledge projects
-write_note & edit_note      # Create/manage knowledge documents
-view_note                   # Retrieve knowledge with relations
-
 # File search and management
 fd "search-term" -e md      # Search markdown files by name
 rg "content" --type md      # Search within markdown content
@@ -53,6 +47,7 @@ rg -i "keyword" --type md   # Case-insensitive search
 
 ### Note Creation Process
 1. **Search before creating** to avoid duplicates
+2. append to exist note or create note, if create new note, continue
 2. **Select appropriate template** from `/output/template/`
 3. **Follow Basic Memory frontmatter standards**:
    ```yaml
@@ -66,12 +61,13 @@ rg -i "keyword" --type md   # Case-insensitive search
    ---
    ```
 4. **Structure content with standard sections**:
-   - Main content using markdown
    - `## Context` for background information (optional)
+   - Main content using markdown
    - `## Observations` for 3-5 categorized insights minimum
    - `## Relations` for 2-3 knowledge graph connections minimum
+   - `## source` the content source
 5. **Ensure valid memory:// URLs** before creating cross-references
-6. mkdir directory and write content under zettellkasten dir,  move exists document to suitable directory  if need  
+6. mkdir suitable hierarchy directory in output/zettelkasten and write content under zettellkasten dir, move exists document to suitable directory if need
 
 ## Common Development Tasks
 
@@ -128,24 +124,6 @@ memory://docs/search/implements/*    # Follow all implements relations from sear
 - Include context and reasoning in Observations
 - Prefer specific technical terms over general descriptions
 
-## Important Configuration
-
-### Basic Memory Integration
-```json
-// .claude/settings.local.json 权限配置
-{
-  "permissions": {
-    "allow": [
-      "mcp__basic-memory__list_memory_projects",
-      "mcp__basic-memory__create_memory_project",
-      "mcp__basic-memory__write_note",
-      "mcp__basic-memory__edit_note",
-      "mcp__basic-memory__view_note"
-    ]
-  }
-}
-```
-
 ## Error Handling
 
 ### Common Issues
@@ -186,23 +164,6 @@ search_notes → read_note → build_context → write_note
 list_directory → search_notes → move_note → validate_structure
 ```
 
-### Common Commands
-```bash
-# Project discovery
-list_memory_projects                    # View available projects
-
-# Knowledge operations
-write_note project="第二大脑"           # Create new knowledge
-edit_note identifier="title"            # Update existing content
-view_note identifier="title"            # Retrieve with relations
-search_notes query="关键词" project="认知中心"  # Find knowledge
-build_context url="memory://pattern"    # Load related content
-
-# Content organization
-list_directory project="认知中心"         # Explore structure
-move_note identifier="title"           # Reorganize content
-```
-
 ## Usage Context
 This knowledge base primarily serves as a **technical knowledge management system** with focus on:
 - Software architecture and design patterns
@@ -211,4 +172,6 @@ This knowledge base primarily serves as a **technical knowledge management syste
 - Automated knowledge generation through AI assistance
 - Structured relationship mapping between concepts
 
-The repository demonstrates production-ready knowledge management workflows combining modern AI tools with traditional knowledge management methodologies.
+## 约束
+使用中文回答
+
