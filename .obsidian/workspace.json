@@ -1,0 +1,220 @@
+{
+  "main": {
+    "id": "11a407c8370de4c1",
+    "type": "split",
+    "children": [
+      {
+        "id": "1e0502cc35f594cf",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "653daa385ed2524b",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "831d302b5dfc87ed",
+    "type": "split",
+    "children": [
+      {
+        "id": "b8da40afb55ca850",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "236d2c2d44fac066",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "3cf67121e0bb72a0",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "5db3342c6e31acb2",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 348.5
+  },
+  "right": {
+    "id": "7d5d9d9716927271",
+    "type": "split",
+    "children": [
+      {
+        "id": "2587ded0cf0993d4",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b201cb4b1c9e23d7",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "6b012a7f40ffb410",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "73fe992a0bcf53f1",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "32f027bbe83094b2",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "4235ee0acda2907b",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "653daa385ed2524b",
+  "lastOpenFiles": [
+    "output/zettelkasten/开发工具/OpenSpec 面向AI编程助手的规范驱动开发工具.md",
+    "output/zettelkasten/开发工具/OpenSpec规范驱动开发框架实战指南.md",
+    "开发方法/AI时代项目改造与多人协作的解决方案.md",
+    "output/zettelkasten/技术/AILLM/LLM Evals 实用指南 - 面向开发者的评估方法.md",
+    "output/zettelkasten/技术/AILLM",
+    "output/zettelkasten/技术",
+    "output/zettelkasten/技术方法/ThoughtWorks技术雷达方法论.md",
+    "output/zettelkasten/技术方法/MCP(模型上下文协议)在AI开发中的应用.md",
+    "output/zettelkasten/技术方法/AI开发工具生态系统分析.md",
+    "output/zettelkasten/技术方法",
+    "output/zettelkasten/技术人物/Martin Fowler个人履历与思想演变.md",
+    "output/zettelkasten/技术人物/Martin Fowler论AI时代软件开发的变革与挑战.md",
+    "output/zettelkasten/技术人物",
+    "output/zettelkasten/开发方法/规格驱动开发(SDD)在AI时代的实践指南.md",
+    "output/zettelkasten/开发方法/AI时代软件重构的核心价值与方法.md",
+    "output/zettelkasten/开发方法/AI时代项目改造与多人协作的解决方案.md",
+    "output/zettelkasten/开发方法/氛围编程(Vibe Coding)的机遇与挑战.md",
+    "output/zettelkasten/开发方法",
+    "output/zettelkasten/开发工具",
+    "开发方法/氛围编程(Vibe Coding)的机遇与挑战.md",
+    "开发方法/规格驱动开发(SDD)在AI时代的实践指南.md",
+    "开发方法/AI时代软件重构的核心价值与方法.md",
+    "开发工具/OpenSpec规范驱动开发框架实战指南.md",
+    "开发工具",
+    "技术方法/AI开发工具生态系统分析.md",
+    "技术方法/MCP(模型上下文协议)在AI开发中的应用.md",
+    "zettelkasten/技术/AILLM/LLM Evals 实用指南 - 面向开发者的评估方法.md",
+    "技术方法/ThoughtWorks技术雷达方法论.md",
+    "技术人物/Martin Fowler论AI时代软件开发的变革与挑战.md",
+    "技术人物/Martin Fowler个人履历与思想演变.md",
+    "开发方法",
+    "技术方法",
+    "技术人物",
+    "output/zettelkasten/深度阅读框架 - 系统性认知工具.md",
+    "output/zettelkasten/深度阅读实践指南 - 具体操作手册.md",
+    "output/zettelkasten/UVPip源配置指南.md",
+    "project-structure/认知中心项目架构图.canvas",
+    "Untitled.canvas"
+  ]
+}
